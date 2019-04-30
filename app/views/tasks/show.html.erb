@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <p><input type="checkbox" name="completed" value="check" <%=  @task.completed ? "checked" : "" %>>&nbsp;&nbsp;<%= @task.details %>&nbsp;</p>
+  <%= link_to edit_task_path(@task) do %>
+    <i class="fas fa-pencil-alt"></i> Edit this task
+  <% end %>&nbsp;&nbsp;
+  <%= link_to task_path(@task), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fas fa-skull"></i> Delete
+  <% end %>
+  <br>
+  <%= link_to tasks_path do %>
+    <i class="fa fa-history"></i> Back to list
+  <% end %>
+</div>
